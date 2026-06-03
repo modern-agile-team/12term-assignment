@@ -47,7 +47,7 @@ git status
 
 ## 5. 스테이징
 
-```bash
+```bashgit 
 git add .
 # 또는 특정 파일만
 git add LDY/Day1/문제이름.js
