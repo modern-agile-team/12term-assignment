@@ -10,10 +10,12 @@ function solution(n) {
     return count;
 }
 
+   //------------------------------------------------------------
+
    //reduce() 메서드 사용
 function solution(n) {
 
     return String(n)
         .split("")   //reduce()를 사용하기 위해 배열 형태로 변환
-            .reduce((sum, digit) => sum + Number(digit), 0);   //문자열 배열을 수자 타입으로 변환 후 누적 합 계산
+            .reduce((sum, digit) => sum + Number(digit), 0);   //문자열 배열을 숫자 타입으로 변환 후 누적 합 계산
 }

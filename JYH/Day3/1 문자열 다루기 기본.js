@@ -7,7 +7,7 @@ function solution(s) {
     
     for (let i = 0; i < s.length; i++) {
         
-        if (s[i] < "0" || s[i] > "9") {   //현재 문자가 숫자가 아니면 false (js 는 문자코드 비교 가능)
+        if (s[i] < "0" || s[i] > "9") {   //현재 문자열이 숫자가 아니면 false (js는 문자코드 비교 가능)
             
             return false;
         }
@@ -18,7 +18,7 @@ function solution(s) {
 }
 
    //------------------------------------------------------------
-   
+
 
     //정규식으로 풀이
 function solution(s) {
