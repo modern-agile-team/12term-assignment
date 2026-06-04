@@ -17,7 +17,8 @@
 // 해결법. 문자열을 배열로 풀어서 하나하나 비교하는 방식으로 해결.
 
 function solution(s) {
-    return (s.length === 4 || s.length === 6) && s.split('').map(str => !isNaN(Number(str))).every(e => e);
+    return (s.length === 4 || s.length === 6)
+        && s.split('').map(str => !isNaN(Number(str))).every(e => e);
 }
 
 console.log(solution("0x1f")); // false
