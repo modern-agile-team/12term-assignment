@@ -7,7 +7,7 @@ function solution(n) {
         sum += Number(String(n)[i]);   //현재 자릿수를 숫자로 변환하혀 누적
     }
     
-    return count;
+    return sum;
 }
 
    //------------------------------------------------------------
