@@ -3,11 +3,11 @@
 function solution(lottos, win_nums) {
     const getRank = (count) => (count > 1 ? 7 - count : 6); // 1과 0은 6등이기에 여기서 false가 나면 자동으로 6으로 반환. 다머지는 7 - 하여 반환.
     const matchCount = lottos.filter((n) => win_nums.includes(n)).length;
-    const zoreCount = lottos.filter(n => n === 0).length;
+    const zeroCount = lottos.filter(n => n === 0).length;
 
-    console.log(matchCount, zoreCount);
 
-    return [getRank(matchCount + zoreCount), getRank(matchCount)]; // 맞춘개수와 0번 개수를 합하여 등수 계산. 최저등수는 맞춘개수만 넣고 계산.
+
+    return [getRank(matchCount + zeroCount), getRank(matchCount)]; // 맞춘개수와 0번 개수를 합하여 등수 계산. 최저등수는 맞춘개수만 넣고 계산.
 }
 
 console.log(solution([44, 1, 0, 0, 31, 25], [31, 10, 45, 1, 6, 19]))
