@@ -1,27 +1,30 @@
 function solution(record) {
-    let user = [];
-    const answer = [];
+    const nicknames = {}
+    const logs = []
+    const answer = []
 
-    // 1번째 값을 정리해서 배열에 주입.
-    record.map(x => x.split(' ')).forEach(v => {
-        if (v[0] === "Enter") {
-            user.push({userId: v[1], nickName: v[2]});
-        } else if (v[0] === "Leave") {
-            user.push({userId: v[1], Leave: true});
-        } else if (v[0] === "Change") {
-            user.push({userId: v[1], changeName: v[2]});
+    for (const r of record) {
+        const [input, id, name] = r.split(' ')
+        if (input === "Enter" || input === "Change") {
+            nicknames[id] = name
         }
-    });
+    }
 
-    // 2번째 닉네임을 변경을 처리한다.
-    user.forEach((x, idx) => {
-        let target
-        // user = user.filter(u => !('changeName' in u));
-    })
+    for (const r of record) {
+        const [input, id] = r.split(' ')
+        if (input === "Enter" || input === "Leave") {
+            logs.push([input, id])
+        }
+    }
 
-    // console.log(user);
+    for (const [input, id] of logs) {
+        input === "Enter"
+            ? answer.push(`${nicknames[id]}님이 들어왔습니다.`)
+            : answer.push(`${nicknames[id]}님이 나갔습니다.`)
+    }
 
     return answer;
 }
 
-console.log(solution(["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"]))
+// console.log(solution(["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan"]))
+console.log(solution(["Enter uid1234 Muzi", "Enter uid4567 Prodo","Leave uid1234","Enter uid1234 Prodo","Change uid4567 Ryan","Change uid1234 Nyan"]))
