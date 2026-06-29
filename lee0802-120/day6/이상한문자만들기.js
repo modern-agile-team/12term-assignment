@@ -16,4 +16,3 @@ function solution(s) {
     }).map(s => s.join("")).join(" ");
 }
 
-console.log(solution("try hello world"));

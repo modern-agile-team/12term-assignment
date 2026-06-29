@@ -10,4 +10,3 @@ function solution(a, b) {
     return answer;
 }
 
-console.log(solution(5, 10));

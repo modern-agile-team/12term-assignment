@@ -19,5 +19,3 @@ function solution(s) {
         : s[Math.floor(s.length / 2)];
 }
 
-console.log(solution("abcde"));
-console.log(solution("qwer"));

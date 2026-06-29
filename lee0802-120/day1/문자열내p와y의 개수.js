@@ -5,5 +5,3 @@ function solution(s){
     return pcount == ycount;
 }
 
-console.log(solution("pPoooyY"))
-console.log(solution("Pyy"))

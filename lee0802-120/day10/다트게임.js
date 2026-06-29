@@ -13,5 +13,3 @@ function solution(dartResult) {
     }
     return cum.reduce((x, v) => x + v, 0);
 }
-
-console.log(solution("1S2D*3T"))
