@@ -5,30 +5,46 @@ function clickEvent() {
         return;
     }
 
-    messagePrint(Calculator(input));
+    printMessage(calculator(input));
 }
 
-function Calculator(value) {
+function calculator(value) {
     if (value === null || value === undefined) {
         return "정확한 계산식이 아닙니다.";
     }
 
-    return value.reduce((acc, cur, i) => {
-        if (i % 2 !== 0) {
-            switch(cur) {
-                case '+': acc += value[i + 1]; break;
-                case '-': acc -= value[i + 1]; break;
-                case '*': acc *= value[i + 1]; break;
-                case '/': acc /= value[i + 1]; break;
+    // 여기서 곱셈과 나눗셈을 계산후 value에서 인덱스를 검색후 *과 / 계산식과 그 수를 제거한다.
+    // while은 *과 /이 없을때까지 반복한다.
+    while (value.includes("*") || value.includes("/")) {
+        const index = value.findIndex(x => x === "*" || x === "/") // *과 /의 인덱스 값을 검색
+        const left = Number(value[index - 1]);
+        const right = Number(value[index + 1]);
+
+        let result;
+        switch(value[index]) {
+            case '*': result = left * right; break;
+            case '/': result = left / right; break;
+        }
+
+        // 여기서 이미 계산한것들을 제거.
+        value.splice(index - 1, 3, String(result));
+    }
+
+    // 그후 나머지 +와 -를 계산후 return
+    return value.reduce((result, token, index) => {
+        if (index % 2 !== 0) {
+            const nextNumber = Number(value[index + 1])
+
+            switch(token) {
+                case '+': result += nextNumber; break;
+                case '-': result -= nextNumber; break;
             }
         }
-        return acc;
+        return result;
     }, Number(value[0]));
 }
 
-function messagePrint(message) {
+function printMessage(message) {
     document.getElementById('printText').innerHTML = `${message}`;
 }
 
-// console.log("1 + 2 / 12 * 2".includes(' '));
-// console.log("1+2/12*2".split(''));
