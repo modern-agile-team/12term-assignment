@@ -1,11 +1,11 @@
 function solution(n, arr1, arr2) {
-    const allAddArr = arr1.map((v, i) => v | arr2[i]);
-    const answer = allAddArr.map(x => x.toString(2));
-
-    answer.forEach((x, i) => answer[i] = x.replace(/1/g, '#'));
-    answer.forEach((x, i) => answer[i] = x.replace(/0/g, ' ').padStart(n, ' '));
-
-    return answer;
+    return arr1.map((v, i) => v | arr2[i])
+        .map(x => x
+            .toString(2)
+            .replace(/1/g, '#')
+            .replace(/0/g, ' ')
+            .padStart(n, ' ')
+        );
 }
 
 console.log(solution(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28]))
