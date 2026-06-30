@@ -10,4 +10,3 @@ function solution(seoul) {
     return "김서방은 " + count + "에 있다";
 }
 
-console.log(solution(["Jans", "JNNNN", "Kim"]));

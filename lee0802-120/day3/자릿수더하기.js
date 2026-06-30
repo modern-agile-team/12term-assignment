@@ -37,6 +37,3 @@ function solution(n) {
 
 // 역시 함수가 최고다
 
-console.log(solution(12345))
-console.log(solution(554))
-console.log(solution(546))

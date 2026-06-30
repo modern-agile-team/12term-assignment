@@ -31,7 +31,3 @@ function solution(s) {
     return answer;
 }
 
-console.log(solution("Zbcdefg"))
-console.log(solution("QLylbyTvOxoJ"))
-console.log(solution("nJBpepMgAmtqxjA"))
-console.log(solution("qrTIIyOuoWjJFlA"))

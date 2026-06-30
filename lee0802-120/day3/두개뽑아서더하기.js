@@ -12,5 +12,3 @@ function solution(numbers) {
     return [...new Set(arr)].sort((a, b) => a - b);
 }
 
-console.log(solution([2,1,3,4,1]))
-console.log(solution([5,0,2,7]))

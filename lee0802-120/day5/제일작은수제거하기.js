@@ -9,6 +9,3 @@ function solution(arr) {
 // 2. 만약 배열의 길이가 0 ~ 1 이하라면 해당 배열에 10 있는지 확인후 -1로 치환 후 리턴.
 // 3. 만약 배열의 길이가 0 ~ 1 이상이라면 filter로 최소값을 제거 후 리턴.
 
-console.log(solution([4,3,2,1]))
-console.log(solution([10]))
-console.log(solution([4,3,10,2,1]))

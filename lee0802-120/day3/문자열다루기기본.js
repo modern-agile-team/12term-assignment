@@ -21,6 +21,3 @@ function solution(s) {
         && s.split('').map(str => !isNaN(Number(str))).every(e => e);
 }
 
-console.log(solution("0x1f")); // false
-console.log(solution("0hello")); // false
-console.log(solution("1234")); // true

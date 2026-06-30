@@ -4,8 +4,7 @@ function solution(dartResult) {
     let cum = [];
 
     for (let i = 0; i < result.length; i++) {
-        let sss = 0;
-        cum.push(sss + parseInt(result[i]) ** Bonus[result[i].match(/[SDT]/)]);
+        cum.push(parseInt(result[i]) ** Bonus[result[i].match(/[SDT]/)]);
         if (result[i].includes('#')) cum[i] *= -1;
         if (result[i].includes('*')) {
             cum[i] *= 2;
@@ -14,5 +13,3 @@ function solution(dartResult) {
     }
     return cum.reduce((x, v) => x + v, 0);
 }
-
-console.log(solution("1S2D*3T"))
