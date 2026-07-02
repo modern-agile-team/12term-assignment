@@ -5,9 +5,7 @@ const ulList = document.getElementById("list-add")
 addBtn.addEventListener('click', addTodo)
 
 todoInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        addTodo();
-    }
+    if (e.key === 'Enter' && !e.isComposing) addTodo()
 })
 
 function addTodo() {
@@ -33,4 +31,12 @@ function addTodo() {
     `;
     ulList.appendChild(li);
     todoInput.value = '';
+}
+
+function removeTodo() {
+
+}
+
+function editTodo() {
+
 }
