@@ -1,0 +1,21 @@
+### nodeJS ###
+**node_modules
+
+### WebStorm IDEA ###
+.idea/*
+!.idea/runConfigurations
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+!**/src/test/**
+src/test
+
+### VS Code ###
+.vscode/
+/src/test/
+temp/
+logs/
