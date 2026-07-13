@@ -1,14 +1,20 @@
 const id = document.getElementById("inputId"),
     password = document.getElementById("inputPassword"),
-    loginbtn = document.getElementById("loginButton");
+    loginbtn = document.getElementById("loginButton"),
+    registerMove = document.getElementById("registerMove");
 
 loginbtn.addEventListener("click", login);
 
 id.addEventListener("keydown", (e) => {
     if (e.key === 'Enter' && !e.isComposing) login()
 })
+
 password.addEventListener("keydown", (e) => {
     if (e.key === 'Enter' && !e.isComposing) login()
+})
+
+registerMove.addEventListener("click", () => {
+    location.href = "/register"
 })
 
 function login() {

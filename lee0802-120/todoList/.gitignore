@@ -1,5 +1,7 @@
 ### nodeJS ###
 **node_modules
+.env
+.env.test
 
 ### WebStorm IDEA ###
 .idea/*

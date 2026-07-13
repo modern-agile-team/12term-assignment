@@ -1,35 +1,44 @@
-const users = {
-    id: ["junsuk", "admin", "system"],
-    password: ["asdf", "admin", "root"]
-}
+const User = require("../../models/User");
+const logger = require("../../config/logger")
 
 const output = {
+    main: (req, res) => {
+        logger.info(`GET / 200 "홈 화면으로 이동"`);
+        res.render("/home/main");
+    },
     login: (req, res) => {
+        logger.info(`GET /login 200 "로그인 화면으로 이동"`);
         res.render("home/login");
     },
     todoList: (req, res) => {
+        logger.info(`GET /todoList 200 "todoList 화면으로 이동"`);
         res.render("home/todo");
+    },
+    register: (req, res) => {
+        logger.info(`GET /register 200 "회원가입 화면으로 이동"`);
+        res.render("home/signUp");
     }
 }
 
 const process = {
-    login: (req, res) => {
-        const id = req.body.id,
-            pwd = req.body.password;
-
-        const response = {};
-        if (users.id.includes(id)) {
-            const idx = users.id.indexOf(id);
-            if (users.password[idx] === pwd) {
-                response.success = true;
-                response.message = "로그인에 성공했습니다."
-                return res.json(response);
-            }
+    login: async (req, res) => {
+        const user = new User(req.body);
+        const response = await user.login();
+        if (response.success) {
+            req.session.userId = req.body.id;
         }
-
-        response.success = true;
-        response.message = "로그인에 실패했습니다.";
-        return res.json(response)
+        logger.info(
+            `POST /login 200 Response: "success: ${response.success}, msg: ${response.msg}"`
+        );
+        return res.json(response);
+    },
+    register: async (req, res) => {
+        const user = new User(req.body);
+        const response = await user.register();
+        logger.info(
+            `POST /register 200 Response: "success: ${response.success}, msg: ${response.msg}"`
+        );
+        return res.json(response);
     }
 }
 
