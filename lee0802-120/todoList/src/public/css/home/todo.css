@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+}
+
+.background {
+    width: 100%;
+    min-height: 70vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 220px;
+}
+
+.todo-container {
+    width: 500px;
+    /*margin-top: -400px;*/
+    transform: translateY(-200px);
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.todo-container h2 {
+    margin: 15px 0 10px 10px;
+}
+
+.todo-input-row {
+    display: flex;
+    align-items: flex-end;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.todo-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.add-btn {
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+}
+
+.add-btn img {
+    width: 30px;
+    height: 30px;
+    display: block;
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-list-add {
+    height: 40px;
+    border-bottom: 2px solid #ccc;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.todo-list-add:hover {
+    background-color: rgb(228, 228, 228);
+}
+
+.todo-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.todo-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.todo-list input {
+    margin-right: 5px;
+}
+
+.todo-list button {
+    border: none;
+    background: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: black;
+}
+
+.todo-list img {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+.edit-input {
+    border: none;
+    border-bottom: 2px solid black;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    font-family: inherit;
+    padding: 0 0 2px 0;
+    flex: 1;
+    min-width: 0;
+}
+
+.ok-btn {
+    border: none;
+    background: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+}
+
+.todo-list-add:not([data-editing="true"]) .edit-input,
+.todo-list-add:not([data-editing="true"]) .ok-btn {
+    display: none;
+}
+
+.todo-list-add[data-editing="true"] .todo-left span,
+.todo-list-add[data-editing="true"] [data-role="edit"],
+.todo-list-add[data-editing="true"] [data-role="delete"] {
+    display: none;
+}
+
+.todo-list-add[data-editing="true"] .todo-left {
+    flex: 1;
+}

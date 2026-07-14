@@ -1,0 +1,14 @@
+# Server Config
+PORT=(포트번호)
+
+# Database Config
+DATABASE_HOST="호스트주소"
+DATABASE_USER="db유저이름"
+DATABASE_PWD="db비밀번호"
+DATABASE_DB="db위치"
+
+# bcrypt Config
+SALT_ROUNDS=(숫자) 암호화강도 (높으면 암호화의 강도가 높아짐)
+
+# Session Config
+SESSION_SECRET="무작위값"
