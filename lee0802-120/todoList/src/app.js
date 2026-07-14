@@ -7,7 +7,6 @@ const app = express();
 const home = require("./routes/home");
 const bodyParser = require("body-parser");
 const session = require("express-session");
-const logger = require("./config/logger")
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -19,7 +18,8 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        maxAge: 1000 * 60 * 60 * 24 // 1일
+        maxAge: 1000 * 60 * 60 * 24, // 1일
+        httpOnly: true
     }
 }));
 

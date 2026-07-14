@@ -108,3 +108,39 @@ body {
     width: 18px;
     height: 18px;
 }
+
+.edit-input {
+    border: none;
+    border-bottom: 2px solid black;
+    background: transparent;
+    outline: none;
+    font-size: 16px;
+    font-family: inherit;
+    padding: 0 0 2px 0;
+    flex: 1;
+    min-width: 0;
+}
+
+.ok-btn {
+    border: none;
+    background: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+}
+
+.todo-list-add:not([data-editing="true"]) .edit-input,
+.todo-list-add:not([data-editing="true"]) .ok-btn {
+    display: none;
+}
+
+.todo-list-add[data-editing="true"] .todo-left span,
+.todo-list-add[data-editing="true"] [data-role="edit"],
+.todo-list-add[data-editing="true"] [data-role="delete"] {
+    display: none;
+}
+
+.todo-list-add[data-editing="true"] .todo-left {
+    flex: 1;
+}
