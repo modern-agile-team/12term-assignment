@@ -1,0 +1,163 @@
+/* TEMP DARK MODE START */
+body.dark-mode {
+    background-color: #111;
+    color: #eee;
+}
+
+body.dark-mode input,
+body.dark-mode button {
+    background-color: #222;
+    color: #eee;
+    border-color: #555;
+}
+/* TEMP DARK MODE END */
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+}
+
+.container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.todo-box {
+    width: 100%;
+    max-width: 360px;
+
+    padding: 24px 26px;
+
+    background-color: #f7f7f7;
+    border-radius: 16px;
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+
+    box-sizing: border-box;
+}
+
+.todo-box h1 {
+    margin: 0 0 24px;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    color: #222;
+}
+
+.input-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+#todo-input {
+    flex: 1;
+
+    padding: 8px 2px;
+
+    font-size: 15px;
+
+    background: transparent;
+
+    border: none;
+    border-bottom: 1px solid #999;
+    outline: none;
+}
+
+#todo-input:focus {
+    border-bottom-color: #333;
+}
+
+#add-button {
+    width: 34px;
+    height: 34px;
+
+    padding: 0;
+
+    font-size: 24px;
+    line-height: 1;
+
+    background: transparent;
+
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+#add-button:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+#add-button:disabled {
+    cursor: default;
+    opacity: 0.4;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    min-height: 42px;
+
+    border-bottom: 1px solid #dddddd;
+}
+
+.todo-item:last-child {
+    border-bottom: none;
+}
+
+.todo-checkbox {
+    flex-shrink: 0;
+}
+
+.todo-text {
+    flex: 1;
+
+    font-size: 14px;
+    color: #333;
+}
+
+.edit-button,
+.delete-button {
+    width: 28px;
+    height: 28px;
+
+    padding: 0;
+
+    font-size: 16px;
+    line-height: 1;
+
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        background-color 0.15s ease;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+    background-color: rgba(0, 0, 0, 0.07);
+    transform: scale(1.12);
+}
